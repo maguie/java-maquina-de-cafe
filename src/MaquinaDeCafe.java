@@ -84,5 +84,15 @@ public class MaquinaDeCafe {
 		return "Felicitaciones!";
 	}
 	
+	public String vendioTodo(int cantidad) {
+		this.azucarero.setCantidadDeAzucar(0);
+		this.cafetera.setCoffeeCups(0);
+		this.vasosPequeno.giveCups(cantidad);
+		this.vasosMediano.giveCups(cantidad);
+		this.vasosGrande.giveCups(cantidad);
+		
+		return "Vendido";
+	}
+	
 	
 }

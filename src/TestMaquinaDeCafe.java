@@ -122,4 +122,10 @@ public class TestMaquinaDeCafe {
 		
 		assertEquals("Felicitaciones!",result);
 	}
+	
+	@Test
+	public void deberiaVenderTodo() {
+		String result = maquinaDeCafe.vendioTodo(5);
+		assertEquals("Vendido",result);
+	}
 }
