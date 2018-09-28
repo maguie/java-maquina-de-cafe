@@ -32,21 +32,21 @@ public class TestMaquinaDeCafe {
 	public void shouldIGiveBackVasoPequeno() {
 		Cup vaso = maquinaDeCafe.getTipoDeVaso("pequeno");
 		
-		assertEquals(maquinaDeCafe.vasosPequeno, vaso);
+		assertEquals(3, vaso.getSize());
 	}
 	
 	@Test
 	public void shoudIGiveBackVasoMediano() {
 		Cup vaso = maquinaDeCafe.getTipoDeVaso("mediano");
 		
-		assertEquals(maquinaDeCafe.vasosMediano, vaso);
+		assertEquals(5, vaso.getSize());
 	}
 	
 	@Test
 	public void shoudIGiveBackVasoGrande() {
 		Cup vaso = maquinaDeCafe.getTipoDeVaso("grande");
 		
-		assertEquals(maquinaDeCafe.vasosGrande, vaso);
+		assertEquals(7, vaso.getSize());
 	}
 
 	@Test
