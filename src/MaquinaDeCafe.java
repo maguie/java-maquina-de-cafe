@@ -68,10 +68,10 @@ public class MaquinaDeCafe {
 			return "No hay vasos";
 		}
 		
-		if(cantidadCafe < cafetera.getAvailableCups()) {
+		if(cantidadCafe > cafetera.getAvailableCups()) {
 			return "No hay cafe";
 		}
-		this.azucarero.giveAzucar(cantidadAzucar);
+		
 		if(!azucarero.hasAzucar(cantidadAzucar)) {
 			return "No hay azucar";
 		}

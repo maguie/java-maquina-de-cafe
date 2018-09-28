@@ -15,9 +15,9 @@ public class TestMaquinaDeCafe {
 	@Before
 	public void setUp() {
 		cafetera = new Coffee(50);
-		vasosPequeno = new Cup(5,10);
-		vasosMediano = new Cup(5,20);
-		vasosGrande = new Cup(5,30);
+		vasosPequeno = new Cup(3,5);
+		vasosMediano = new Cup(5,5);
+		vasosGrande = new Cup(7,5);
 		azuquero = new Azucarero(20);
 		
 		maquinaDeCafe = new MaquinaDeCafe();
@@ -60,14 +60,14 @@ public class TestMaquinaDeCafe {
 	
 	@Test
 	public void shoudISayThereIsNoCoffee() {
-		cafetera = new Coffee(5);
+		cafetera = new Coffee(2);
 		maquinaDeCafe.setCafetera(cafetera);
 		Cup vaso = maquinaDeCafe.getTipoDeVaso("pequeno");
 		
 		
 		String result = maquinaDeCafe.getVasoDeCafe(vaso,1,2);
 		
-		assertEquals("No hay café", result);
+		assertEquals("No hay cafe", result);
 	}
 	
 	@Test
@@ -90,7 +90,7 @@ public class TestMaquinaDeCafe {
 		
 		int result = maquinaDeCafe.getCafetera().getAvailableCups();
 		
-		assertEquals(40, result);
+		assertEquals(47, result);
 	}
 	
 	@Test
@@ -113,5 +113,13 @@ public class TestMaquinaDeCafe {
 		int result = maquinaDeCafe.getAzucarero().getCantidadDeAzucar();
 		
 		assertEquals(17, result);
+	}
+	
+	@Test
+	public void deberiaDevolverFelicitaciones() {
+		Cup vaso = maquinaDeCafe.getTipoDeVaso("pequeno");
+		String result = maquinaDeCafe.getVasoDeCafe(vaso,1,3);
+		
+		assertEquals("Felicitaciones!",result);
 	}
 }
