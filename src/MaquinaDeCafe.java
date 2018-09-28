@@ -47,22 +47,18 @@ public class MaquinaDeCafe {
 	}
 
 	public Cup getTipoDeVaso(String tipo) {
-		Cup vaso = null;
+
 		
 		switch (tipo) {
 		case "pequeno":
-			vaso = new Cup(3,1);
-			break;
+			return this.vasosPequeno;
 		case "mediano":
-			vaso = new Cup(5,1);
-			break;
+			return this.vasosMediano;
 		case "grande":
-			vaso = new Cup(7,1);
-			break;
+			return this.vasosGrande;
 		default:
-			break;
+			return null;
 		}
-		return vaso;
 	}
 	
 	public String getVasoDeCafe(Cup vaso, int cantidadVasos, int cantidadAzucar) {
@@ -75,15 +71,15 @@ public class MaquinaDeCafe {
 		if(cantidadCafe < cafetera.getAvailableCups()) {
 			return "No hay cafe";
 		}
-		
+		this.azucarero.giveAzucar(cantidadAzucar);
 		if(!azucarero.hasAzucar(cantidadAzucar)) {
 			return "No hay azucar";
 		}
 		
 		//Entregar café
 		vaso.giveCups(cantidadVasos);
-		azucarero.giveAzucar(cantidadAzucar);
-		cafetera.giveCoffee(cantidadCafe);
+		this.azucarero.giveAzucar(cantidadAzucar);
+		this.cafetera.giveCoffee(cantidadCafe);
 		
 		return "Felicitaciones!";
 	}
