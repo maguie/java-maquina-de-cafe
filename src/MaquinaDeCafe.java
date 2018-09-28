@@ -82,7 +82,7 @@ public class MaquinaDeCafe {
 		
 		//Entregar café
 		vaso.giveCups(cantidadVasos);
-		azucarero.giveAzucar(cantidadAzucar);
+		getAzucarero().giveAzucar(cantidadAzucar);
 		cafetera.giveCoffee(cantidadCafe);
 		
 		return "Felicitaciones!";
